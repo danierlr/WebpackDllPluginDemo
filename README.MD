@@ -13,4 +13,4 @@ node 14.13.1+ (below may still work)
  - run `npm run build`
  - run `npm run start`
  - open `http://localhost:3000/` in the browser
- - open browser console, an error `Cannot read properties of undefined (reading 'call')` shows up and webpack build script is not executing. The text should be different from `initialContent`.
+ - open browser console, an error `Cannot read properties of undefined (reading 'call')` shows up and the bundled script is not executing. The text should be different from `initialContent`.
