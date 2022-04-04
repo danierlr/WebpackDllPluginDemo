@@ -8,7 +8,7 @@ module.exports = {
 
   devtool: 'inline-source-map',
 
-  entry: "./src/index",
+  // entry: "./src/index",
 
   output: {
     path: path.join(__dirname, './public'),
