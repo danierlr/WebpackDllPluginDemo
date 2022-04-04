@@ -1,5 +1,7 @@
 This is a reproduction repo of an error "Cannot read properties of undefined (reading 'call')", when using Module federation plugin.
 
+Question on Stack Overflow: https://stackoverflow.com/questions/71738820/webpack-module-federation-error-cannot-read-properties-of-undefined-reading-c
+
 # Requirements
 
 node 14.13.1+ (below may still work)
