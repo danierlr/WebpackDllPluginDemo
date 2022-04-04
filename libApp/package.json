@@ -1,0 +1,21 @@
+{
+  "name": "lib-app",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "webpack --config ./webpack.config.js && copyfiles ./public/* ../hostApp/ -EV"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.4",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "dependencies": {
+    "copyfiles": "^2.4.1"
+  }
+}
