@@ -1,4 +1,4 @@
-This is a reproduction repo of an error "Cannot read properties of undefined (reading 'call')", when using Mudule federation plugin
+This is a reproduction repo of an error "Cannot read properties of undefined (reading 'call')", when using Module federation plugin.
 
 # Requirements
 
