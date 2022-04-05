@@ -27,10 +27,10 @@ module.exports = {
 
   plugins: [
 		new webpack.DllPlugin({
-      name: '[name]',
+      name: 'libApp',
 			path: path.resolve(
 				__dirname,
-				"./public/[name].manifest.json"
+				"./public/libApp.manifest.json"
 			),
 			entryOnly: false,
       format: true,

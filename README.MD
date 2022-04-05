@@ -1,6 +1,6 @@
 This is a demo of webpack dll plugin
 
-Currently not working
+Currently not working, SO question: https://stackoverflow.com/questions/71749945/how-to-set-up-webpack-dll-plugin-module-not-found-error
 
 # Requirements
 
