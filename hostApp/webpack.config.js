@@ -1,6 +1,7 @@
 'use strict'
 
 const path = require('path')
+const webpack = require('webpack')
 const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
 
 module.exports = {
@@ -23,12 +24,13 @@ module.exports = {
   },
 
   plugins: [
-    new ModuleFederationPlugin({
-      name: "hostApp",
-      remotes: {
-        libApp: `libApp@http://localhost:3000/libApp`,
-      },
-    }),
+    new webpack.DllReferencePlugin({
+			// context: path.join(__dirname, "public"),
+			manifest: require("./public/libApp.manifest.json"),
+      name: 'libApp',
+      scope: "libScope",
+      extensions: [".js"],
+		}),
   ],
 
   module: {

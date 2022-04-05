@@ -1,6 +1,7 @@
 'use strict'
 
 const path = require('path')
+const webpack = require('webpack')
 const ModuleFederationPlugin = require("webpack").container.ModuleFederationPlugin;
 
 module.exports = {
@@ -10,21 +11,31 @@ module.exports = {
 
   // entry: "./src/index",
 
+  entry: {
+    libApp: [
+      'index',
+    ]
+  },
+
   output: {
+    filename: "[name].dll.js",
+    chunkFilename: "[id].chunk.dll.js",
+		libraryTarget: "commonjs2",
     path: path.join(__dirname, './public'),
     publicPath: '/',
   },
 
   plugins: [
-    new ModuleFederationPlugin({
-      name: "libApp",
-      filename: "libApp.js",
-      exposes: {
-        "./moduleA": "./src/moduleA",
-        "./moduleB": "./src/moduleB",
-      }
-    })
-  ],
+		new webpack.DllPlugin({
+      name: '[name]',
+			path: path.resolve(
+				__dirname,
+				"./public/[name].manifest.json"
+			),
+			entryOnly: false,
+      format: true,
+		})
+	],
 
   module: {
     rules: [
@@ -44,4 +55,19 @@ module.exports = {
       },
     ],
   },
+
+  resolve: {
+    extensions: [
+      '.js',
+    ],
+    modules: [
+      path.join(__dirname, 'src'),
+      path.join(__dirname, 'node_modules'),
+    ],
+  },
+
+  optimization: {
+		usedExports: true,
+		sideEffects: true
+	},
 }

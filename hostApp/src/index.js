@@ -1,8 +1,9 @@
 console.log('host app test')
 
-import moduleA from 'libApp/moduleA'
-import moduleB from 'libApp/moduleB'
+const moduleA = require('libScope/moduleA')
+// const moduleA = require('libScope/src/moduleA')
+// import moduleB from 'moduleB'
 
 const el = document.getElementById('hostAppContainer')
 
-el.innerHTML = 'changedContent: ' + moduleA + moduleB
+el.innerHTML = 'changedContent: ' + moduleA// + moduleB
