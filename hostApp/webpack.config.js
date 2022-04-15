@@ -25,12 +25,12 @@ module.exports = {
 
   plugins: [
     new webpack.DllReferencePlugin({
-			// context: path.join(__dirname, "public"),
-			manifest: require("./public/libApp.manifest.json"),
+      // context: path.join(__dirname, "public"),
+      manifest: require("./public/libApp.manifest.json"),
       name: 'libApp',
       scope: "libScope",
       extensions: [".js"],
-		}),
+    }),
   ],
 
   module: {

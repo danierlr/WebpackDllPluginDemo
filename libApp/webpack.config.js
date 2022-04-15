@@ -20,22 +20,22 @@ module.exports = {
   output: {
     filename: "[name].dll.js",
     chunkFilename: "[id].chunk.dll.js",
-		libraryTarget: "commonjs2",
+    libraryTarget: "commonjs2",
     path: path.join(__dirname, './public'),
     publicPath: '/',
   },
 
   plugins: [
-		new webpack.DllPlugin({
+    new webpack.DllPlugin({
       name: 'libApp',
-			path: path.resolve(
-				__dirname,
-				"./public/libApp.manifest.json"
-			),
-			entryOnly: false,
+      path: path.resolve(
+        __dirname,
+        "./public/libApp.manifest.json"
+      ),
+      entryOnly: false,
       format: true,
-		})
-	],
+    })
+  ],
 
   module: {
     rules: [
@@ -67,7 +67,7 @@ module.exports = {
   },
 
   optimization: {
-		usedExports: true,
-		sideEffects: true
-	},
+    usedExports: true,
+    sideEffects: true
+  },
 }
